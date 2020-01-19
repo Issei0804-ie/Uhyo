@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Uhyo</string>
+    <string name="main_soloplay">ひとりでプレイ</string>
+    <string name="TitleString">OSERO</string>
+    <string name="main_2playerButton">ふたりでプレイ</string>
+    <string name="main_onlinePlayButton">オンラインプレイ</string>
 </resources>
