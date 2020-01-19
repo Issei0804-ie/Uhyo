@@ -4,5 +4,7 @@
     <string name="TitleString">OSERO</string>
     <string name="main_2playerButton">ふたりでプレイ</string>
     <string name="main_onlinePlayButton">オンラインプレイ</string>
+    <string name="FirstButtonString">先手●</string>
+    <string name="SecondButtonString">後手○</string>
 
 </resources>

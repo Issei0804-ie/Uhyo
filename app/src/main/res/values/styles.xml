@@ -12,6 +12,13 @@
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">30dp</item>
+    </style>
 
+    <style name="TitleText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/TitleString</item>
+        <item name="android:textSize">70sp</item>
+        <item name="android:layout_marginTop">80dp</item>
     </style>
 </resources>
