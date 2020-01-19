@@ -19,6 +19,6 @@ class SoloFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_play_solo, container, false)
+        return inflater.inflate(R.layout.fragment_main_solo, container, false)
     }
 }

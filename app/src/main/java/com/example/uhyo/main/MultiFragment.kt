@@ -19,6 +19,6 @@ class MultiFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_play_multi, container, false)
+        return inflater.inflate(R.layout.fragment_main_multi, container, false)
     }
 }
