@@ -6,5 +6,7 @@
     <string name="main_onlinePlayButton">オンラインプレイ</string>
     <string name="FirstButtonString">先手●</string>
     <string name="SecondButtonString">後手○</string>
+    <string name="JoinRoomButtonText">部屋に入る</string>
+    <string name="MakeRoomButtonText">部屋を立てる</string>
 
 </resources>

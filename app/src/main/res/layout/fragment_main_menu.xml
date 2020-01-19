@@ -7,7 +7,7 @@
     tools:context=".main.MainMenuFragment">
 
     <TextView
-        android:id="@+id/mainMenuTile"
+        android:id="@+id/MainMenuTile"
         style="@style/TitleText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +19,7 @@
         android:id="@+id/mainMenuSoloPlayButton"
         style="@style/MainMenuButtonStyle"
         android:text="@string/main_soloplay"
-        app:layout_constraintTop_toBottomOf="@id/mainMenuTile"
+        app:layout_constraintTop_toBottomOf="@id/MainMenuTile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintLeft_toLeftOf="parent"
