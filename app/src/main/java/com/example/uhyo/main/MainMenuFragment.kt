@@ -37,14 +37,17 @@ class MainMenuFragment : Fragment(){
 
             solo.setOnClickListener{
                 fragmentManager.replace(R.id.main_InsertFragmentLocation, SoloFragment())
+                fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
             multi.setOnClickListener{
                 Toast.makeText(context, "mada", Toast.LENGTH_LONG).show()
 //                fragmentManager.replace(R.id.main_InsertFragmentLocation, MultiFragment())
+//                fragmentManager.addToBackStack("")
             }
             online.setOnClickListener{
                 fragmentManager.replace(R.id.main_InsertFragmentLocation, MultiFragment())
+                fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
         }
