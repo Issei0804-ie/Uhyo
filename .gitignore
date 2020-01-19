@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/DB/mysql/
+/minio/data/
