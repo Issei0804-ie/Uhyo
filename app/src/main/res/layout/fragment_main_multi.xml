@@ -26,7 +26,7 @@
     <Button
         android:id="@+id/QuickMatchButton"
         style="@style/MainMenuButtonStyle"
-        android:text="@string/MakeRoomButtonText"
+        android:text="@string/QuickMatchButtonText"
         app:layout_constraintTop_toBottomOf="@id/MakeRoomButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
