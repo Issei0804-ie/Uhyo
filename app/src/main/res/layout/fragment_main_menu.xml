@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".main.MainMenuFragment">
+
+
+    <Button
+        android:id="@+id/mainMenuSoloPlayButton"
+        style="@style/MainMenuButtonStyle"
+        android:text="@string/main_soloplay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/mainMenu2PlayerButton"
+        style="@style/MainMenuButtonStyle"
+        android:text="@string/main_2playerButton"
+        app:layout_constraintTop_toBottomOf="@id/mainMenuSoloPlayButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/mainMenuOnlinePlayButton"
+        style="@style/MainMenuButtonStyle"
+        android:text="@string/main_onlinePlayButton"
+        app:layout_constraintTop_toBottomOf="@id/mainMenu2PlayerButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

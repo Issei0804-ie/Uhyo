@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Uhyo</string>
+    <string name="main_soloplay">ひとりでプレイ</string>
+    <string name="TitleString">OSERO</string>
+    <string name="main_2playerButton">ふたりでプレイ</string>
+    <string name="main_onlinePlayButton">オンラインプレイ</string>
+    <string name="FirstButtonString">先手●</string>
+    <string name="SecondButtonString">後手○</string>
+    <string name="JoinRoomButtonText">部屋に入る</string>
+    <string name="MakeRoomButtonText">部屋を立てる</string>
+    <string name="QuickMatchButtonText">クイックマッチ</string>
+
 </resources>
