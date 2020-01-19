@@ -9,6 +9,8 @@
         android:id="@+id/SoloModeTitle"
         style="@style/TitleText"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
@@ -16,7 +18,7 @@
         android:id="@+id/FirstSelectButton"
         style="@style/MainMenuButtonStyle"
         android:text="@string/FirstButtonString"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintTop_toBottomOf="@id/SoloModeTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
