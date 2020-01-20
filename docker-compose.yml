@@ -13,6 +13,8 @@ services:
 
   python:
     image: python:3.7
+    ports:
+      - 8000:80
     tty: true
 
   nginx:
@@ -23,5 +25,4 @@ services:
      - ./nginx:/etc/nginx/conf.d
     depends_on:
       - python
-      - db
     tty: true
