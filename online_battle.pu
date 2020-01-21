@@ -1,0 +1,20 @@
+@startuml
+title オンライン対戦の仕組み
+participant GuestUser
+participant HostUser
+participant APIServer
+participant DBServer
+
+HostUser -> APIServer : 部屋を立てるボタンを押す
+APIServer -> DBServer : ルーム情報を登録
+APIServer -> HostUser : 部屋番号を返す
+GuestUser -> APIServer: 誰かとプレイボタンを押す
+APIServer -> DBServer : ルーム情報をリクエスト
+DBServer -> APIServer : ルーム情報をレスポンス
+APIServer -> GuestUser: ルーム情報を返す
+GuestUser -> APIServer: ルーム選択する
+APIServer -> HostUser : GuestUserの情報を送る(名前等)
+HostUser -> APIServer : 先手後手選ぶ
+APIServer -> APIServer: オセロ開始
+APIServer -> DBServer : ログ取得
+@enduml
