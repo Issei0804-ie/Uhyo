@@ -4,7 +4,9 @@ services:
     image: mysql:5.7
     container_name: mysql
     ports:
-     - 3306:3306
+     - "3306:3306"
+    expose:
+      - "3306"
     volumes:
      - ./DB/mysql:/var/lib/mysql
      - ./DB/init:/docker-entrypoint-initdb.d
@@ -34,6 +36,4 @@ services:
      - 80:80
     volumes:
      - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - python
     tty: true
