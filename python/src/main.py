@@ -1,6 +1,5 @@
-#Flaskとrender_template（HTMLを表示させるための関数）をインポート
-from flask import Flask,render_template
-#Flaskオブジェクトの生成
+from flask import Flask, render_template
+import os
 app = Flask(__name__)
 
 #「/」へアクセスがあった場合に、"Hello World"の文字列を返す
@@ -13,6 +12,8 @@ def hello():
 def index():
     return render_template("./../template/index.html")
 
-#おまじない
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = os.environ.get('WEB_API_PORT')
+    if port != None: #読み取れなかった場合
+        app.run(debug=True, host='0.0.0.0', port=port)
+
