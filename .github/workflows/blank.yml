@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - develop
+  pull_request:
+    branches: 
+      - develop
+        
+jobs:
+  my-job:
+    name: Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running APIServer
+    run: |
+      docker-compose up -d && \
+      sleep 30 && \
+      curl localhost:80
