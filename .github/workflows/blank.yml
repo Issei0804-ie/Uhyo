@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Running APIServer
         run: |
-          pwd && \
+          ls && \
+          ls ./.. && \
           docker-compose up -d && \
           sleep 30 && \
           curl localhost:80
