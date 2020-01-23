@@ -13,6 +13,8 @@ jobs:
     name: Job
     runs-on: ubuntu-latest
     steps:
+      - uses: develop/checkout@v1
+       
       - name: Running APIServer
         run: |
           docker-compose up -d && \
