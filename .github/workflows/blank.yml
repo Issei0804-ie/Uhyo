@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Running APIServer
-    run: |
-      docker-compose up -d && \
-      sleep 30 && \
-      curl localhost:80
+        run: |
+          docker-compose up -d && \
+          sleep 30 && \
+          curl localhost:80
