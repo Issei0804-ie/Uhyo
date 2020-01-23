@@ -9,13 +9,13 @@ on:
       - develop
         
 jobs:
-  my-job:
-    name: Job
-    runs-on: ubuntu-latest
+  build-and-push:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 300
+
     steps:
-      - name: Running APIServer
-        run: |
-          cd .. && \
-          docker-compose up -d && \
-          sleep 30 && \
-          curl localhost:80
+    - uses: actions/checkout@v1
+
+    - name: Build Image
+      run: |
+        docker-compose up 
