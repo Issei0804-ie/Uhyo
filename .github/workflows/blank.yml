@@ -3,10 +3,7 @@ name: CI
 on:
   push:
     branches: 
-      - develop
-  pull_request:
-    branches: 
-      - develop
+      - feature_GitHub-Action
         
 jobs:
   build-and-push:
