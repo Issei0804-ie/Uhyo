@@ -16,7 +16,4 @@ jobs:
       - name: Running APIServer
         run: |
           ls && \
-          ls ./.. && \
-          docker-compose up -d && \
-          sleep 30 && \
-          curl localhost:80
+          ls ./..
