@@ -13,10 +13,9 @@ jobs:
     name: Job
     runs-on: ubuntu-latest
     steps:
-      - uses: develop/checkout@v1
-       
       - name: Running APIServer
         run: |
+          pwd && \
           docker-compose up -d && \
           sleep 30 && \
           curl localhost:80
