@@ -16,7 +16,7 @@ jobs:
     - name: "Run test suite"
       uses: msfjarvis/setup-android@1.0
       with:
-        entrypoint: ./gradlew
+        entrypoint: sudo ./gradlew
        
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
