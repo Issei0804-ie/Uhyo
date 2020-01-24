@@ -24,3 +24,12 @@ jobs:
     - name: ping 
       run : |
         curl localhost:80
+        
+    - name: Gradle Android
+      uses: Raul6469/android-gradle-action@1.0.0
+    
+    - name: Android build
+      run : |
+        cd app && \
+        gradle test
+        
