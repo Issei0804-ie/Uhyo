@@ -23,6 +23,5 @@ jobs:
         
     - name: ping 
       run : |
-        ping localhost:80 && \
-        ping localhost:8000 && \
-        ping localhost:3306 && 
+        curl localhost:80 && \
+        curl localhost:8000
