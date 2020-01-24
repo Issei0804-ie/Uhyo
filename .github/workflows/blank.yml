@@ -16,10 +16,16 @@ jobs:
     - name: Gradle Android
       env:
         ANDROID_LICENCE: ${{ secrets.ANDROID_LICENCE }}
-      uses: Raul6469/android-gradle-action@1.0.0
-    
+      uses: Raul6469/android-gradle-action@1.0.0 
+ 
+    - name: Bild Android Project
+      run: |
+        gradle build
+       
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
+    
+
 
     - name: Build Image
       run: |
