@@ -20,7 +20,7 @@ jobs:
  
     - name: Bild Android Project
       run: |
-        gradle build
+        gradle test
        
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
