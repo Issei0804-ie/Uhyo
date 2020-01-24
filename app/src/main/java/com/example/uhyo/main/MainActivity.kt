@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         if(savedInstanceState == null){
             val fragment = MainMenuFragment()
-            val transaction = supportFragmentManager.beginTransaction()
+            val transaction = supportFragmenteManager.beginTransaction()
             transaction.add(R.id.main_InsertFragmentLocation, fragment)
             transaction.commit()
         }
