@@ -12,7 +12,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
+  
+    - name: Gradle Android
+      uses: Raul6469/android-gradle-action@1.0.0
+    
+    - name: Android build
+      run : |
+        cd app && \
+        secrets =["ANDROID_LICENCE"] && \
+        gradle test
+        
+        
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
 
@@ -25,11 +35,4 @@ jobs:
       run : |
         curl localhost:80
         
-    - name: Gradle Android
-      uses: Raul6469/android-gradle-action@1.0.0
-    
-    - name: Android build
-      run : |
-        cd app && \
-        gradle test
-        
+
