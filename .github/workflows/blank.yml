@@ -17,6 +17,7 @@ jobs:
       uses: msfjarvis/setup-android@1.0
       with:
         entrypoint: sudo ./gradlew
+        args: dependencies spotlessApply detekt assembleDebug
        
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
