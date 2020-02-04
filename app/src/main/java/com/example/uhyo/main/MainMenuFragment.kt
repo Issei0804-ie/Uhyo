@@ -45,7 +45,7 @@ class MainMenuFragment : Fragment(){
 //                fragmentManager.addToBackStack("")
             }
             online.setOnClickListener{
-                fragmentManager.replace(R.id.main_InsertFragmentLocation, MultiFragment())
+                fragmentManager.replace(R.id.main_InsertFragmentLocation, MainMultiFragment())
                 fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
