@@ -1,4 +1,4 @@
-package com.example.uhyo.main
+package com.example.uhyo.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

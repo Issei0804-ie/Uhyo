@@ -1,4 +1,4 @@
-package com.example.uhyo.online
+package com.example.uhyo.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class OnlineMakeRoomFragment: Fragment() {
+class MainMultiFragment : Fragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +15,6 @@ class OnlineMakeRoomFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_online_makeroom, container, false)
+        return inflater.inflate(R.layout.fragment_main_multi, container, false)
     }
 }

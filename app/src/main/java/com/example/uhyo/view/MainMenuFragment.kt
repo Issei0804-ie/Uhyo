@@ -1,4 +1,4 @@
-package com.example.uhyo.main
+package com.example.uhyo.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -31,7 +31,9 @@ class MainMenuFragment : Fragment(){
             val fragmentManager = it.supportFragmentManager.beginTransaction()
 
             solo.setOnClickListener{
-                fragmentManager.replace(R.id.main_InsertFragmentLocation, MainSoloFragment())
+                fragmentManager.replace(R.id.main_InsertFragmentLocation,
+                    MainSoloFragment()
+                )
                 fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
@@ -41,7 +43,9 @@ class MainMenuFragment : Fragment(){
 //                fragmentManager.addToBackStack("")
             }
             online.setOnClickListener{
-                fragmentManager.replace(R.id.main_InsertFragmentLocation, MainMultiFragment())
+                fragmentManager.replace(R.id.main_InsertFragmentLocation,
+                    MainMultiFragment()
+                )
                 fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
