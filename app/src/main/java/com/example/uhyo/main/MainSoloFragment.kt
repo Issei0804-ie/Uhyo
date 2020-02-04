@@ -1,4 +1,4 @@
-package com.example.uhyo.online
+package com.example.uhyo.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class SetNameFrament: Fragment() {
+class MainSoloFragment : Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +19,6 @@ class SetNameFrament: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_online_setname, container, false)
+        return inflater.inflate(R.layout.fragment_main_solo, container, false)
     }
 }

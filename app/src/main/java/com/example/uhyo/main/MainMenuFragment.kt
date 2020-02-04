@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
-import kotlinx.android.synthetic.*
 
 class MainMenuFragment : Fragment(){
 
@@ -36,7 +35,7 @@ class MainMenuFragment : Fragment(){
             val fragmentManager = it.supportFragmentManager.beginTransaction()
 
             solo.setOnClickListener{
-                fragmentManager.replace(R.id.main_InsertFragmentLocation, SoloFragment())
+                fragmentManager.replace(R.id.main_InsertFragmentLocation, MainSoloFragment())
                 fragmentManager.addToBackStack("")
                 fragmentManager.commit()
             }
@@ -51,8 +50,5 @@ class MainMenuFragment : Fragment(){
                 fragmentManager.commit()
             }
         }
-
-
     }
-
 }
