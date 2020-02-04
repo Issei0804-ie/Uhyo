@@ -5,7 +5,4 @@ import androidx.appcompat.app.AppCompatActivity
 
 class OnlineMenuActivity: AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 }

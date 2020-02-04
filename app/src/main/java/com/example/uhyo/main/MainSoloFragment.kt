@@ -9,10 +9,6 @@ import com.example.uhyo.R
 
 class MainSoloFragment : Fragment(){
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
