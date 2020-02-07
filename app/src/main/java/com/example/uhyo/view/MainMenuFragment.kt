@@ -39,11 +39,10 @@ class MainMenuFragment : Fragment(){
             }
             multi.setOnClickListener{
                 Toast.makeText(context, "mada", Toast.LENGTH_LONG).show()
-//                fragmentManager.replace(R.id.main_InsertFragmentLocation, MultiFragment())
-//                fragmentManager.addToBackStack("")
             }
             online.setOnClickListener{
-                fragmentManager.replace(R.id.main_InsertFragmentLocation,
+                fragmentManager.replace(
+                    R.id.main_InsertFragmentLocation,
                     MainMultiFragment()
                 )
                 fragmentManager.addToBackStack("")

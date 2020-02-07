@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             val fragment = MainMenuFragment()
             val transaction = supportFragmentManager.beginTransaction()
             transaction.add(R.id.main_InsertFragmentLocation, fragment)
