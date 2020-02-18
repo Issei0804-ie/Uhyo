@@ -1,4 +1,4 @@
-package com.example.uhyo.view
+package com.example.uhyo.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.uhyo.view
+package com.example.uhyo.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class OnlineQuickMatchFragment: Fragment() {
+class OnlineSetNameFrament: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +15,6 @@ class OnlineQuickMatchFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_online_quickmatch, container, false)
+        return inflater.inflate(R.layout.fragment_online_setname, container, false)
     }
 }

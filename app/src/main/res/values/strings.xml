@@ -9,5 +9,6 @@
     <string name="JoinRoomButtonText">部屋に入る</string>
     <string name="MakeRoomButtonText">部屋を立てる</string>
     <string name="QuickMatchButtonText">クイックマッチ</string>
+    <string name="SettingButton">設定</string>
 
 </resources>
