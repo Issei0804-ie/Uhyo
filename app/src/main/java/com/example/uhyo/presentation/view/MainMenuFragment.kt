@@ -10,9 +10,9 @@ import com.example.uhyo.presentation.presenter.IMainMenuPresenter
 import com.example.uhyo.presentation.presenter.MainMenuPresenter
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 
-class MainMenuFragment : Fragment() {
+class MainMenuFragment : Fragment(){
 
-    private lateinit var presenter: MainMenuPresenter
+    private lateinit var presenter: IMainMenuPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +28,7 @@ class MainMenuFragment : Fragment() {
 
         presenter = MainMenuPresenter(
             this.id,
-            activity as IMainMenuPresenter.ChangeMainMenu
+            activity as IMainMenuView
         )
 
         SoloPlayButton.setOnClickListener {

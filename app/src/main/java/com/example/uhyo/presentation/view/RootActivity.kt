@@ -8,8 +8,7 @@ import com.example.uhyo.R
 
 class RootActivity :
     AppCompatActivity(),
-    IMainMenuPresenter.ChangeMainMenu
-{
+    IMainMenuView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +25,7 @@ class RootActivity :
     fun doTransaction(containerViewId: Int, fragment: Fragment){
         supportFragmentManager
             .beginTransaction()
+            .addToBackStack("")
             .replace(containerViewId, fragment)
             .commit()
     }
