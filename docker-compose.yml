@@ -10,6 +10,7 @@ services:
      - ./DB/config:/etc/mysql/mysql.conf.d
     environment:
      -  MYSQL_ROOT_PASSWORD=hogehoge
+    tty: true
 
   python:
     image: python:3.7
