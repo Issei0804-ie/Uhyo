@@ -1,4 +1,4 @@
-package com.example.uhyo.main
+package com.example.uhyo.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class SoloFragment : Fragment(){
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+class MainSoloFragment : Fragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
