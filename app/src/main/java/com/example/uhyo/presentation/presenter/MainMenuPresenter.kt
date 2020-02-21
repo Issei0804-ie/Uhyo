@@ -5,7 +5,7 @@ import com.example.uhyo.presentation.view.IMainMenuView
 class MainMenuPresenter(
     private var containerViewId: Int,
     private val iView: IMainMenuView
-):IMainMenuPresenter {
+) : IMainMenuPresenter {
 
     override fun onClickSoloPlayButton() {
         iView.changeSoloPlayDisplay(containerViewId)

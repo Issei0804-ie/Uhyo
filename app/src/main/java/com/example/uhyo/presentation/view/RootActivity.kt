@@ -1,9 +1,8 @@
 package com.example.uhyo.presentation.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.uhyo.presentation.presenter.IMainMenuPresenter
 import com.example.uhyo.R
 
 class RootActivity :
@@ -22,7 +21,7 @@ class RootActivity :
         }
     }
 
-    fun doTransaction(containerViewId: Int, fragment: Fragment){
+    fun doTransaction(containerViewId: Int, fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .addToBackStack("")

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class MainMultiFragment : Fragment(){
+class MainMultiFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -10,7 +10,7 @@ import com.example.uhyo.presentation.presenter.IMainMenuPresenter
 import com.example.uhyo.presentation.presenter.MainMenuPresenter
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 
-class MainMenuFragment : Fragment(){
+class MainMenuFragment : Fragment() {
 
     private lateinit var presenter: IMainMenuPresenter
 

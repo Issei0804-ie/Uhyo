@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
 
-class OnlineSetNameFrament: Fragment() {
+class OnlineSetNameFrament : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
