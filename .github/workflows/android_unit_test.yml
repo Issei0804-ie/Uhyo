@@ -5,7 +5,7 @@ name: android_unit_test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
     branches: [ master ]
 
