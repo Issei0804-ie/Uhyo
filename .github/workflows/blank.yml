@@ -1,9 +1,9 @@
 name: CI
 
-on:
-  push:
-    branches: 
-      - develop
+#on:
+#  push:
+#    branches: 
+#      - develop
         
 jobs:
   build-and-push:
@@ -22,7 +22,7 @@ jobs:
     
   #デバッグ用ビルド
     - name: Build of Debug
-      run: gradle assembleDebug
+      run: cd Android && gradle assembleDebug
         
   #テストコードを回す
     - name: Build of test
