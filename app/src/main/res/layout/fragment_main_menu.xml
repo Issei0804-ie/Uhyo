@@ -54,10 +54,10 @@
         app:layout_constraintStart_toStartOf="@+id/MainMenu_soloPlay" />
 
     <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="オセロのルール"
-        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/MainMenu_onlinePlay"
         app:layout_constraintTop_toBottomOf="@+id/MainMenu_onlinePlay"

@@ -30,18 +30,16 @@ class RootActivity :
             .beginTransaction()
             .replace(page.LayoutResId, fragmentShop(page))
 
-        if (addToBackStack){
+        if (addToBackStack) {
             transaction.addToBackStack(page.name).commit()
-        }else{
+        } else {
             transaction.commit()
         }
     }
 
     private fun fragmentShop(page: Page): Fragment {
-        return fragmentManger.findFragmentByTag(page.name) ?:
-                when(page){
-                    Page.MainMenu -> MainMenuFragment()
-                }
+        return fragmentManger.findFragmentByTag(page.name) ?: when (page) {
+            Page.MainMenu -> MainMenuFragment()
+        }
     }
-
 }

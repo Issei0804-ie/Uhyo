@@ -16,6 +16,4 @@ class MainMenuFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_main_menu, container, false)
     }
-
-
 }
