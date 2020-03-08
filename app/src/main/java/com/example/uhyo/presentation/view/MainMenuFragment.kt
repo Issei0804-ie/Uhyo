@@ -6,14 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.uhyo.R
-import com.example.uhyo.presentation.presenter.IMainMenuPresenter
-import com.example.uhyo.presentation.presenter.MainMenuPresenter
-import kotlinx.android.synthetic.main.fragment_main_menu.*
 
 class MainMenuFragment : Fragment() {
-
-    private lateinit var presenter: IMainMenuPresenter
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,27 +15,5 @@ class MainMenuFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_main_menu, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        presenter = MainMenuPresenter(
-            this.id,
-            activity as IMainMenuView
-        )
-
-        SoloPlayButton.setOnClickListener {
-            presenter.onClickSoloPlayButton()
-        }
-        TwoPlayerButton.setOnClickListener {
-            presenter.onClickTwoPlayerButton()
-        }
-        OnlinePlayButton.setOnClickListener {
-            presenter.onClickOnlinePlayButton()
-        }
-        SettingButton.setOnClickListener {
-            presenter.onClickSettingButton()
-        }
     }
 }
