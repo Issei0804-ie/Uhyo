@@ -1,0 +1,19 @@
+@startuml
+title オンライン対戦の仕組み
+participant ClientA
+participant APIServer
+database DB
+loop ゲーム終わるまで
+    alt 自分の番
+        ClientA -> APIServer : コマを置いた情報を送信
+        APIServer -> Redis : 自分のトークンを用いてコマ情報を格納
+        note left: 一定時間接続が無ければ通信エラー処理を行う。
+    end
+    Redis -> APIServer : 相手のトークンを用いて相手のコマ情報を取得
+    APIServer -> ClientA: 相手のコマ情報を送信
+    APIServer -> Redis : コマ情報を削除
+    note left: 一定時間接続が無ければ通信エラー処理を行う。
+    ClientA -> ClientA : クライアント側で勝敗処理
+end
+ClientA -> ClientA : ローカルDBに勝敗情報を入れる
+@enduml

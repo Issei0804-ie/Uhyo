@@ -1,0 +1,125 @@
+swagger: "2.0"
+info:
+  description: "スコールは一つのエンドポイントを提供します。三つのメソッドを用いることにより、ユーザーをキューに積む、ルームの確認、コマ情報送信を行うことができます。"
+  version: "1.0.0"
+  title: "Uhyo APIServer (スコール)"
+host: "hogehoge(未定)"
+basePath: "/api/uhyo/"
+tags:
+- name: "Room"
+  description: "ルームに関する処理"
+schemes:
+- "https"
+- "http"
+paths:
+  /room:
+    post:
+      tags:
+        - "Room"
+      summary: "ルームに登録"
+      description: "ルーム情報の登録を行います"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "ユーザー名"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            type: "object"
+            properties:
+              token:
+                type: "string"
+        400:
+          description: "失敗時のレスポンス。 message にエラー文を入れます。"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+    get:
+      tags:
+        - "Room"
+      summary: "ルームの確認"
+      description: "ルームに参加できたか確認を行います"
+      parameters:
+      - name: "token"
+        in: "body" 
+        description: "トークン"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            token:
+              type: "string"
+              example: "token"
+      responses:
+        200:
+          description: "成功した場合は先行または後攻か返します。"
+          schema:
+            type: "object"
+            properties:
+              order:
+                type: "string"
+                example: "先行"
+        204:
+          description: "ルームに参加できていない場合に返します。"
+        400:
+          description: "失敗時のレスポンス。 message にエラー文を入れます。"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+    
+    put:
+      tags:
+        - "Room"
+      summary: "コマ情報の送信"
+      description: "コマを置いた場所の情報を送信します。"
+      parameters:
+      - name: "body"
+        in: "body" 
+        description: "x座標とy座標を送信します。パスの場合は -1 を送信します。"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            token:
+              type: "string"
+              example: "token"
+            x:
+              type: "integer"
+              example: 1
+            y:
+              type: "integer"
+              example: 1
+      responses:
+        200:
+          description: "成功した場合は相手のコマ情報を返します。パスの場合は -1 を送信します。"
+          schema:
+            type: "object"
+            properties:
+              x:
+                type: "integer"
+                example: 1
+              y:
+                type: "integer"
+                example: 1
+        400:
+          description: "失敗時のレスポンス。 message にエラー文を入れます。"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              
+              
+              
+              
+              
+              
+              
+           
