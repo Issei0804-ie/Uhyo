@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/back"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="＜ 戻る"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/toolbar_solo_play"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="ひとり対局"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_computer_level"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:text="コンピュータのレベル"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_solo_play"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <Button
+        android:id="@+id/button_computer_level_1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/Button_background_white"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
+        app:layout_constraintEnd_toStartOf="@id/button_computer_level_2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_computer_level"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/button_computer_level_2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/Button_background_white"
+        android:text="2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
+        app:layout_constraintEnd_toStartOf="@id/button_computer_level_3"
+        app:layout_constraintStart_toEndOf="@+id/button_computer_level_1"
+        app:layout_constraintTop_toBottomOf="@+id/text_computer_level"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/button_computer_level_3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/Button_background_white"
+        android:text="3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
+        app:layout_constraintEnd_toStartOf="@id/button_computer_level_4"
+        app:layout_constraintStart_toEndOf="@+id/button_computer_level_2"
+        app:layout_constraintTop_toBottomOf="@+id/text_computer_level"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/button_computer_level_4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/Button_background_white"
+        android:text="4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_computer_level_3"
+        app:layout_constraintTop_toBottomOf="@+id/text_computer_level"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/text_your_turn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="あなたの手番"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/text_computer_level"
+        app:layout_constraintStart_toStartOf="@+id/text_computer_level"
+        app:layout_constraintTop_toBottomOf="@id/text_computer_level" />
+
+    <Button
+        android:id="@+id/button_turn_black"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/Button_background_white"
+        android:text="●  先手"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@id/button_turn_white"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_your_turn"
+        app:layout_constraintVertical_bias="0.25" />
+
+
+    <Button
+        android:id="@+id/button_turn_white"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/Button_background_white"
+        android:text="○  後手"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_turn_black"
+        app:layout_constraintTop_toBottomOf="@+id/text_your_turn"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#606060"
+        android:text="はじめる"
+        android:textColor="@color/Button_background_white"
+        android:textSize="40sp"
+        android:layout_margin="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_your_turn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
