@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.uhyo.R
+import kotlinx.android.synthetic.main.fragment_main_solo_setting.*
 
 class SoloPlaySettingFragment : Fragment() {
     override fun onCreateView(
@@ -15,5 +17,13 @@ class SoloPlaySettingFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_main_solo_setting, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        button_back.setOnClickListener {
+            it.findNavController().popBackStack()
+        }
     }
 }
