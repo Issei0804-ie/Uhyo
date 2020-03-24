@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:navGraph="@navigation/nav_graph">
 
+
     <Button
         android:id="@+id/button_back"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="＜ 戻る"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:text="戻る"
+        android:background="@color/background_white"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_solo_play"
+        app:layout_constraintEnd_toStartOf="@+id/toolbar_solo_play"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_solo_play" />
 
     <TextView
         android:id="@+id/toolbar_solo_play"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="@string/title_text_soloPlaySetting"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button_back"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/text_computer_level"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="100dp"
         android:text="@string/text_computer_level"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +48,10 @@
 
     <Button
         android:id="@+id/button_computer_level_1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="5dp"
-        android:background="@color/Button_background_white"
+        android:layout_width="55dp"
+        android:layout_height="51dp"
+        android:layout_marginHorizontal="3dp"
+        android:background="@color/background_white"
         android:text="@string/text_setComputer_level_1"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
@@ -58,10 +63,10 @@
 
     <Button
         android:id="@+id/button_computer_level_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="55dp"
+        android:layout_height="51dp"
         android:layout_marginHorizontal="5dp"
-        android:background="@color/Button_background_white"
+        android:background="#E1E1E1"
         android:text="@string/text_setComputer_level_2"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
@@ -72,10 +77,11 @@
 
     <Button
         android:id="@+id/button_computer_level_3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="55dp"
+        android:layout_height="51dp"
         android:layout_marginHorizontal="5dp"
-        android:background="@color/Button_background_white"
+        android:background="#818181"
+        android:textColor="@color/background_white"
         android:text="@string/text_setComputer_level_3"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
@@ -86,10 +92,11 @@
 
     <Button
         android:id="@+id/button_computer_level_4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="55dp"
+        android:layout_height="51dp"
         android:layout_marginHorizontal="5dp"
-        android:background="@color/Button_background_white"
+        android:background="#585858"
+        android:textColor="@color/background_white"
         android:text="@string/text_setComputer_level_4"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_your_turn"
@@ -99,11 +106,36 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
+        android:id="@+id/text_lowLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="弱"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/button_computer_level_1"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/button_computer_level_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_computer_level_1" />
+
+    <TextView
+        android:id="@+id/text_highLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="強"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/button_computer_level_4"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/button_computer_level_4"
+        app:layout_constraintTop_toBottomOf="@+id/button_computer_level_4" />
+
+    <TextView
         android:id="@+id/text_your_turn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/text_selectYourTurn"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:layout_marginTop="80dp"
         app:layout_constraintBottom_toTopOf="@+id/button_play"
         app:layout_constraintEnd_toEndOf="@+id/text_computer_level"
         app:layout_constraintStart_toStartOf="@+id/text_computer_level"
@@ -114,7 +146,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginEnd="10dp"
-        android:background="@color/Button_background_white"
+        android:background="@color/background_white"
         android:text="●  先手"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button_play"
@@ -130,7 +162,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:background="@color/Button_background_white"
+        android:background="@color/background_white"
         android:text="○  後手"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button_play"
@@ -141,12 +173,12 @@
 
     <Button
         android:id="@+id/button_play"
-        android:layout_width="0dp"
+        android:layout_width="270dp"
         android:layout_height="100dp"
         android:layout_margin="60dp"
         android:background="#606060"
         android:text="@string/button_text_play"
-        android:textColor="@color/Button_background_white"
+        android:textColor="@color/background_white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

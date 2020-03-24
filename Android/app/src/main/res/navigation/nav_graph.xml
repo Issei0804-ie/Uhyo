@@ -11,8 +11,11 @@
         android:label="MainMenuFragment"
         tools:layout="@layout/fragment_main_menu">
         <action
-            android:id="@+id/nav_toSoloSettingFragment"
+            android:id="@+id/action_mainMenu_to_soloPlaySetting"
             app:destination="@id/soloPlaySettingFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_offlinePlay"
+            app:destination="@id/offlinePlayFragment" />
     </fragment>
 
     <fragment
@@ -21,7 +24,7 @@
         android:label="SoloPlaySettingFragment"
         tools:layout="@layout/fragment_main_solo_setting">
         <action
-            android:id="@+id/nav_toOfflinePlay"
+            android:id="@+id/action_soloPlaySetting_to_offlinePlay"
             app:destination="@id/offlinePlayFragment" />
     </fragment>
 
