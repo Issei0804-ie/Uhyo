@@ -1,20 +1,20 @@
 package com.example.uhyo.model
 
+import com.squareup.okhttp.OkHttpClient
+import com.squareup.okhttp.Request
 import org.junit.Test
-import java.net.URL
 
 class ServerConnectionTest {
 
     @Test
     fun serverConnectionTest(){
-        val testServerUrl = URL("http://192.168.1.6:80/get")
-        val connection = testServerUrl.openConnection()
-        connection.apply {
-            doOutput = true
-            getRequestProperty("GET")
-            connect()
-        }
+        val testServerUrl = "http://192.168.1.6:80/get"
+        val request = Request.Builder().apply {
+            url(testServerUrl)
+            get()
+        }.build()
 
-        val status = connection.content
+        val body = OkHttpClient().newCall(request).execute().body().string()
+        println(body)
     }
 }
