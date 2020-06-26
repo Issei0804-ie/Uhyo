@@ -1,6 +1,0 @@
-.DS_Store
-/DB/mysql/
-/go/.idea/
-/go/pkg/
-/go/pkg/mod
-/go/pkg/sumdb
