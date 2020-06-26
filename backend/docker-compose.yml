@@ -1,29 +1,14 @@
 version: '3'
 services:
-  db:
-    image: mysql:5.7
+  go:
+    image: golang:1.13
+    container_name: go
     ports:
-     - 3306:3306
+      - 80:80
     volumes:
-     - ./DB/mysql:/var/lib/mysql
-     - ./DB/init:/docker-entrypoint-initdb.d
-     - ./DB/config:/etc/mysql/mysql.conf.d
+      - ./go/:/go/src/
+    command: bash -c "go mod download && go run main.go"
+    working_dir: /go/src
     environment:
-     -  MYSQL_ROOT_PASSWORD=hogehoge
-    tty: true
-
-  python:
-    image: python:3.7
-    ports:
-      - 8000:80
-    tty: true
-
-  nginx:
-    image: nginx:latest
-    ports:
-     - 80:80
-    volumes:
-     - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - python
+      - GO111MODULE=on
     tty: true

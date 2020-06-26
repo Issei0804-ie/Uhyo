@@ -1,28 +1,19 @@
 package main
 
-import (
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-	"net/http"
-)
+import "github.com/gin-gonic/gin"
+
 
 func main() {
-	// Echo instance
-	e := echo.New()
-
-	// Middleware
-
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-
-	// Routes
-	e.GET("/", hello)
-
-	// Start server
-	e.Logger.Fatal(e.Start(":1323"))
-}
-
-// Handler
-func hello(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
+	r := gin.Default()
+	r.GET("/get", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "This is GET Method",
+		})
+	})
+	r.POST("/post", func(c *gin.Context){
+		c.JSON(200, gin.H{
+			"message": "This is POST Method",
+		})
+	})
+	r.Run(":80") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
