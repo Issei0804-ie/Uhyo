@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"regexp"
 )
@@ -28,13 +27,12 @@ func main() {
 		}
 
 		r := regexp.MustCompile(`[亜-熙ぁ-んァ-ヶ]*`)
-		if !r.MatchString(message.name){
+		if !r.MatchString(message.name) {
 			c.JSON(400, gin.H{
-				"message":"name error",
+				"message": "name error",
 			})
 			return
 		}
-
 
 		c.JSON(200, gin.H{
 			"message": "your name is" + message.name,
