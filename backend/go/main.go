@@ -1,7 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
-
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"regexp"
+)
 
 func main() {
 	r := gin.Default()
@@ -10,16 +13,26 @@ func main() {
 			"message": "This is GET Method",
 		})
 	})
-	r.POST("/post", func(c *gin.Context){
+	r.POST("/post", func(c *gin.Context) {
 		message := struct {
 			name string
 		}{
 			"",
 		}
-		if err := c.BindJSON(&message); err!=nil {
+
+		if err := c.BindJSON(&message); err != nil {
 			c.JSON(400, gin.H{
-				"message":"Bad Request",
+				"message": "Bad Request",
 			})
+			return
+		}
+
+		r := regexp.MustCompile(`[亜-熙ぁ-んァ-ヶ]*`)
+		if !r.MatchString(message.name){
+			c.JSON(400, gin.H{
+				"message":"name error",
+			})
+			return
 		}
 
 
