@@ -4,3 +4,4 @@
 /go/pkg/
 /go/pkg/mod
 /go/pkg/sumdb
+.idea/
