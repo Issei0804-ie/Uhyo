@@ -1,0 +1,24 @@
+@startuml
+title マッチングの仕組み
+participant Client
+participant API
+participant RoomManager
+participant Room
+Client -> API : オンライン対戦のクエリを投げる
+API -> RoomManager : ルームに入る
+alt 空いているルームがある
+    RoomManager -> Room : ルーム作成
+    alt セッション切断した
+        API -> RoomManager : セッション切断通知
+                RoomManager -> Room : ルーム削除
+    end
+else
+    alt セッション切断した
+        API -> RoomManager : セッション切断通知
+        RoomManager -> Room : 抜けた人を除く
+    end
+    RoomManager -> Room : ルームに追加
+    RoomManager -> API : マッチ完了
+    API -> Client : マッチング成功
+end
+@enduml
