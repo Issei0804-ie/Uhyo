@@ -1,0 +1,15 @@
+@startuml
+    IView -> Presenter: startView
+    activate Presenter
+
+    IView -> Presenter : onClicked: BackButton
+    activate Presenter
+    Presenter --> IView : goBack
+    deactivate Presenter
+
+    IView -> Presenter : onClicked: startGameButton(computerStr: Int, firstAction: boolean)
+    activate Presenter
+    Presenter -> I_Repository: setSoloPlaySetting(computerStr: Int, firstAction: boolean)
+    Presenter --> IView : show: gameView
+    deactivate Presenter
+@enduml

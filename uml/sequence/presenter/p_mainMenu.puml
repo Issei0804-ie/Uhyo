@@ -1,0 +1,26 @@
+@startuml
+I_view -> Presenter : startView
+activate Presenter
+
+I_view -> Presenter : onClicked: SoloPlayButton
+activate Presenter
+Presenter --> I_view : show: soloPlaySettingView
+deactivate Presenter
+
+I_view -> Presenter : onClicked: duoPlayButton
+activate Presenter
+Presenter --> I_view : show: playVIewForDuo
+deactivate Presenter
+
+I_view -> Presenter : onClicked: onlinePlayButton
+activate Presenter
+Presenter --> I_view : show: matingView
+deactivate Presenter
+
+I_view -> Presenter : onClicked: OthelloRule
+activate Presenter
+Presenter --> I_view : show: OthelloRule
+deactivate Presenter
+
+
+@enduml
