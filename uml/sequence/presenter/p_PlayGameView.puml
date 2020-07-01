@@ -1,0 +1,28 @@
+@startuml
+
+participant i_view
+participant Presenter
+participant m_Board
+boundary BoardStateListener
+
+activate i_view
+i_view -> Presenter : onStart
+activate Presenter
+
+Presenter -> m_Board : startGame()
+activate m_Board
+Presenter -> m_Board : setListener(BoardStateListener)
+
+m_Board -> m_Board : init piece
+
+
+
+i_view -> Presenter : onClick:
+
+i_view -> Presenter : onClick: pauseButton
+activate Presenter
+Presenter --> i_view : show: pauseDialog
+deactivate Presenter
+
+
+@enduml

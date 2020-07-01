@@ -1,0 +1,54 @@
+@startuml
+Presenter o-- Board
+Board *-- Piece
+iView <.. Presenter
+iView <|.. view
+BoardStateListener <|.. Presenter
+BoardStateListener <-- Board
+iPresenter <|.. Presenter
+iPresenter <.. view
+
+class Board {
+    - pieces: List<Piece>
+    + initBoard()
+    + putPiece(x, y)
+    + countBlackPiece(): Int
+    + countWhitePiece(): Int
+}
+
+interface BoardStateListener {
+    + reversedPiece(piece: Piece)
+    + nextTurn(turn: Int)
+    + pass()
+    + finishGame()
+}
+
+class Piece {
+    - int status
+    - int x
+    - int y
+    + reversePiece()
+}
+
+interface iView {
+    + onStart()
+    + onClickPauseButton()
+    + onClickBoardPosition(x: Int, y: Int)
+}
+
+class view {}
+
+interface iPresenter {
+    putPiece(x: Int, y: Int, color: Int)
+    reversePiece(x: Int, y: Int)
+    setWhiteCount(n: Int)
+    setBlackCount(n: Int)
+    showPause()
+    showPass()
+    showTurn(you: Int)
+    showResult(winner: Int)
+}
+class Presenter {
+
+}
+@enduml
