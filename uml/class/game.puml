@@ -50,8 +50,9 @@ interface iPresenter {
     showBlackCount(n: Int)
     showPause()
     showPass()
-    showTurn(you: Int)
-    showResult(winner: Int)
+    showTurn(color: Int)
+    showResult(winnerColor: Int)
+    throwErrorText(text: String)
 }
 class Presenter {
 

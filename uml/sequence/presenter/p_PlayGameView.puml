@@ -1,28 +1,56 @@
 @startuml
 
-participant i_view
-participant Presenter
-participant m_Board
-boundary BoardStateListener
+participant view
+participant presenter
+participant board
+participant piece
 
-activate i_view
-i_view -> Presenter : onStart
-activate Presenter
+activate view
+activate presenter
+view -> presenter : onStart()
 
-Presenter -> m_Board : startGame()
-activate m_Board
-Presenter -> m_Board : setListener(BoardStateListener)
+activate presenter
+activate board
+presenter -> board : initBoard()
+activate board
+board -> board : setTurn(Int)
+board -> board : putPiece(x, y) x4
+presenter <-- board : puttedPiece(piece)
+view <-- presenter : showPutPiece(x, y, color)
+deactivate board
+presenter -> board : countBlackPiece(): Int
+view <-- presenter : showBlackCount(n : Int)
+presenter -> board : countWhitePiece(): Int
+view <-- presenter : showWhiteCount(n : Int)
+deactivate presenter
 
-m_Board -> m_Board : init piece
+/'　TODO : check puttable position　'/
 
-
-
-i_view -> Presenter : onClick:
-
-i_view -> Presenter : onClick: pauseButton
-activate Presenter
-Presenter --> i_view : show: pauseDialog
-deactivate Presenter
+view -> presenter : onClickBoardPosition(x, y)
+activate presenter
+presenter -> board : checkPuttablePosition(): Boolean
+alt true
+    presenter -> board : putPiece(x, y)
+    view <-- presenter : showPutPiece(x, y, color)
+    board -> board : checkReversiblePiece(x, y): List<Piece>
+    activate board
+    loop
+        presenter <-- board : reversedPiece()
+        view <-- presenter : showReversePiece(x, y, toColor)
+    end
+    board -> board : setTurn()
+    activate board
+    presenter <-- board : nextTurn(Int)
+    view <-- presenter : showTurn(color: Int)
+    deactivate board
+    deactivate board
+else false
+    view <-- presenter : throwErrorText(text: String)
+end
+deactivate board
+deactivate presenter
+deactivate presenter
+deactivate view
 
 
 @enduml
