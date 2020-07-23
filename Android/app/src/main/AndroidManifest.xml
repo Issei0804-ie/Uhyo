@@ -11,8 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".presentation.view.RootActivity"
-            android:parentActivityName=".presentation.view.RootActivity">
+            android:name="com.example.uhyo.view.RootActivity"
+            android:parentActivityName="com.example.uhyo.view.RootActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

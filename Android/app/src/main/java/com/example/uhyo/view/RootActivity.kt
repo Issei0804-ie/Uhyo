@@ -1,9 +1,9 @@
-package com.example.uhyo.presentation.view
+package com.example.uhyo.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.uhyo.R
-import com.example.uhyo.presentation.presenter.view.IRootView
+import com.example.uhyo.presenter.view.IRootView
 
 class RootActivity : AppCompatActivity(), IRootView{
     override fun onCreate(savedInstanceState: Bundle?) {
