@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.example.uhyo.presentation.view.MainMenuFragment"
+        android:name="com.example.uhyo.view.MainMenuFragment"
         android:label="MainMenuFragment"
         tools:layout="@layout/fragment_main_menu">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/soloPlaySettingFragment"
-        android:name="com.example.uhyo.presentation.view.SoloPlaySettingFragment"
+        android:name="com.example.uhyo.view.SoloPlaySettingFragment"
         android:label="SoloPlaySettingFragment"
         tools:layout="@layout/fragment_main_solo_setting">
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/offlinePlayFragment"
-        android:name="com.example.uhyo.presentation.view.OfflinePlayFragment"
+        android:name="com.example.uhyo.view.OfflinePlayFragment"
         android:label="fragment_offline_play"
         tools:layout="@layout/fragment_offline_play" />
 </navigation>

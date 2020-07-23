@@ -1,58 +1,74 @@
 @startuml
-Presenter o-- Board
-Board *-- Piece
-iView <.. Presenter
-iView <|.. view
+IBoardState <|.. BoardState
+IBoardState <-- Board
+BoardState *-- Piece
+BoardState *-- Turn
 BoardStateListener <|.. Presenter
 BoardStateListener <-- Board
+Board <-- Presenter
 iPresenter <|.. Presenter
-iPresenter <.. view
+iPresenter <-- view
+iView <-- Presenter
+iView <|.. view
 
 class Board {
-    - pieces: List<Piece>
-    - turn: Int
     + initBoard()
-    + getTurn(): Int
-    + putPiece(x, y)
-    + checkPuttablePosition(x, y): Boolean
+    + getTurn(): Turn
+    + putPiece(row: Row, col: Col)
+    + checkPuttablePosition(row: Row, col: Col): Boolean
     + checkPuttablePosition(): List<Piece>
     + countBlackPiece(): Int
     + countWhitePiece(): Int
-    - setTurn(Int)
+    - setTurn(turn: Turn)
+}
+
+class BoardState {
+    - pieces: List<Piece>
+    - turn: Turn
+}
+
+interface IBoardState {
+    + getPieces(): List<Piece>
+    + getTurn(): Turn
+}
+
+enum Turn {
+    + BLACK
+    + WHITE
 }
 
 interface BoardStateListener {
     + puttedPiece(piece: Piece)
     + reversedPiece(piece: Piece)
-    + nextTurn(turn: Int)
+    + nextTurn(turn: Turn)
     + pass()
     + finishGame()
 }
 
 class Piece {
-    - int status
-    - int x
-    - int y
+    - Turn status
+    - int Row
+    - int Col
     + reversePiece()
 }
 
-interface iView {
+interface iPresenter {
     + onStart()
     + onClickPauseButton()
-    + onClickBoardPosition(x: Int, y: Int)
+    + onClickBoardPosition(row: Row, col: Col)
 }
 
 class view {}
 
-interface iPresenter {
-    showPutPiece(x: Int, y: Int, color: Int)
-    showReversePiece(x: Int, y: Int, color: Int)
+interface iView {
+    showPutPiece(row: Row, col: Col, color: Turn)
+    showReversePiece(row: Row, col: Col, color: Turn)
     showWhiteCount(n: Int)
     showBlackCount(n: Int)
     showPause()
     showPass()
-    showTurn(color: Int)
-    showResult(winnerColor: Int)
+    showTurn(color: Turn)
+    showResult(winner: Turn)
     throwErrorText(text: String)
 }
 class Presenter {
