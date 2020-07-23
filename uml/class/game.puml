@@ -20,12 +20,12 @@ class BoardController {}
 interface IBoardController {
     + initBoard()
     + getTurn(): Turn
-    + putPiece(x, y)
-    + checkPuttablePosition(x, y): Boolean
+    + putPiece(row: Row, col: Col)
+    + checkPuttablePosition(row: Row, col: Col): Boolean
     + checkPuttablePosition(): List<Piece>
     + countBlackPiece(): Int
     + countWhitePiece(): Int
-    - setTurn(Turn)
+    - setTurn(turn: Turn)
 }
 
 class BoardState {
@@ -53,22 +53,22 @@ interface BoardStateListener {
 
 class Piece {
     - Turn status
-    - int x
-    - int y
+    - int Row
+    - int Col
     + reversePiece()
 }
 
 interface iPresenter {
     + onStart()
     + onClickPauseButton()
-    + onClickBoardPosition(x: Int, y: Int)
+    + onClickBoardPosition(row: Row, col: Col)
 }
 
 class view {}
 
 interface iView {
-    showPutPiece(x: Int, y: Int, color: Turn)
-    showReversePiece(x: Int, y: Int, color: Turn)
+    showPutPiece(row: Row, col: Col, color: Turn)
+    showReversePiece(row: Row, col: Col, color: Turn)
     showWhiteCount(n: Int)
     showBlackCount(n: Int)
     showPause()
