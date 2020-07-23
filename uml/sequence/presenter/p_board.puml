@@ -1,0 +1,13 @@
+@startuml
+participant presenter
+boundary board_state_listener
+participant board
+participant piece
+
+activate presenter
+
+presenter -> board : checkPuttablePosition(): List<Piece>
+activate board
+
+
+@enduml

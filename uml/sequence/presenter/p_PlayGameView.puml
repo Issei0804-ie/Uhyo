@@ -3,7 +3,6 @@
 participant view
 participant presenter
 participant board
-participant piece
 
 activate view
 activate presenter
@@ -23,8 +22,6 @@ view <-- presenter : showBlackCount(n : Int)
 presenter -> board : countWhitePiece(): Int
 view <-- presenter : showWhiteCount(n : Int)
 deactivate presenter
-
-/'　TODO : check puttable position　'/
 
 view -> presenter : onClickBoardPosition(x, y)
 activate presenter
