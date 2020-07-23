@@ -10,27 +10,32 @@ iPresenter <.. view
 
 class Board {
     - pieces: List<Piece>
-    - turn: Int
+    - turn: Turn
     + initBoard()
-    + getTurn(): Int
+    + getTurn(): Turn
     + putPiece(x, y)
     + checkPuttablePosition(x, y): Boolean
     + checkPuttablePosition(): List<Piece>
     + countBlackPiece(): Int
     + countWhitePiece(): Int
-    - setTurn(Int)
+    - setTurn(Turn)
+}
+
+enum Turn {
+    + BLACK
+    + WHITE
 }
 
 interface BoardStateListener {
     + puttedPiece(piece: Piece)
     + reversedPiece(piece: Piece)
-    + nextTurn(turn: Int)
+    + nextTurn(turn: Turn)
     + pass()
     + finishGame()
 }
 
 class Piece {
-    - int status
+    - Turn status
     - int x
     - int y
     + reversePiece()
@@ -45,14 +50,14 @@ interface iView {
 class view {}
 
 interface iPresenter {
-    showPutPiece(x: Int, y: Int, color: Int)
-    showReversePiece(x: Int, y: Int, color: Int)
+    showPutPiece(x: Int, y: Int, color: Turn)
+    showReversePiece(x: Int, y: Int, color: Turn)
     showWhiteCount(n: Int)
     showBlackCount(n: Int)
     showPause()
     showPass()
-    showTurn(color: Int)
-    showResult(winnerColor: Int)
+    showTurn(color: Turn)
+    showResult(winner: Turn)
     throwErrorText(text: String)
 }
 class Presenter {
