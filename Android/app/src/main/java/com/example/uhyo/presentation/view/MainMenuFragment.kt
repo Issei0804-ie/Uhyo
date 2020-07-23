@@ -15,13 +15,10 @@ class MainMenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_main_menu, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         button_MainMenu_soloPlay.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.nav_toSoloSettingFragment, null)
         )
