@@ -1,23 +1,17 @@
 @startuml
-IBoardController <-- Board
+IBoardState <|.. BoardState
 IBoardState <-- Board
-IBoardController <|.. BoardController
 BoardState *-- Piece
 BoardState *-- Turn
 BoardStateListener <|.. Presenter
+BoardStateListener <-- Board
 Board <-- Presenter
 iPresenter <|.. Presenter
+iPresenter <-- view
 iView <-- Presenter
 iView <|.. view
-iPresenter <-- view
-BoardStateListener <-- BoardController
-IBoardState <|.. BoardState
 
-class Board {}
-
-class BoardController {}
-
-interface IBoardController {
+class Board {
     + initBoard()
     + getTurn(): Turn
     + putPiece(row: Row, col: Col)
