@@ -1,16 +1,23 @@
 @startuml
-Presenter o-- Board
-Board *-- Piece
-iView <.. Presenter
-iView <|.. view
+IBoardController <-- Board
+IBoardState <-- Board
+IBoardController <|.. BoardController
+BoardState *-- Piece
+BoardState *-- Turn
 BoardStateListener <|.. Presenter
-BoardStateListener <-- Board
+Board <-- Presenter
 iPresenter <|.. Presenter
-iPresenter <.. view
+iView <-- Presenter
+iView <|.. view
+iPresenter <-- view
+BoardStateListener <-- BoardController
+IBoardState <|.. BoardState
 
-class Board {
-    - pieces: List<Piece>
-    - turn: Turn
+class Board {}
+
+class BoardController {}
+
+interface IBoardController {
     + initBoard()
     + getTurn(): Turn
     + putPiece(x, y)
@@ -19,6 +26,16 @@ class Board {
     + countBlackPiece(): Int
     + countWhitePiece(): Int
     - setTurn(Turn)
+}
+
+class BoardState {
+    - pieces: List<Piece>
+    - turn: Turn
+}
+
+interface IBoardState {
+    + getPieces(): List<Piece>
+    + getTurn(): Turn
 }
 
 enum Turn {
@@ -41,7 +58,7 @@ class Piece {
     + reversePiece()
 }
 
-interface iView {
+interface iPresenter {
     + onStart()
     + onClickPauseButton()
     + onClickBoardPosition(x: Int, y: Int)
@@ -49,7 +66,7 @@ interface iView {
 
 class view {}
 
-interface iPresenter {
+interface iView {
     showPutPiece(x: Int, y: Int, color: Turn)
     showReversePiece(x: Int, y: Int, color: Turn)
     showWhiteCount(n: Int)
