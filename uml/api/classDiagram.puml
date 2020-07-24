@@ -5,13 +5,13 @@ package "Domain"{
     class FixedValue
     class RequestData
 }
+
 package "Usecase"{
     class websocket_repository
     class http_repository
     interface websocket_i_repository
     interface http_i_repository
 }
-
 
 package "controller" {
     class websocket_controller
@@ -27,28 +27,37 @@ package "Framework" {
 }
 
 
-websocket <|. Gorrila_websocket
+/'usecase and domain '/
+RequestData <.. websocket_repository
 SessionID <.. websocket_repository
-websocket_i_repository <|. websocket_controller
+SessionID <.. http_repository
+FixedValue <.. http_repository
+
+/'usecase'/
 websocket_i_repository <.. websocket_repository
+http_i_repository <.. http_repository
+
+/'controller and usecase '/
+http_i_repository <|. http_controller
+websocket_i_repository <|. websocket_controller
+
+/'controller'/
 context <.. websocket_controller
 websocket <.. websocket_controller
+context <.. http_controller
+
+/'interface and controller'/
+websocket <|. Gorrila_websocket
+context <|. gin
 websocket_controller <.. router
 
-http_i_repository <.. http_repository
-http_controller .|> http_i_repository
-http_controller ..> context
-gin .|> context
 
+/' ---------------class--------------- '/
 
-class router{
-}
-class Gorrila_websocket{
-    GetOpponent()
-}
-
+/'domain'/
 class SessionID {
     NewSessionID() *SessionID
+    message string
     session_id string
 }
 
@@ -59,17 +68,30 @@ class FixedValue {
 
 class RequestData {
     request_data() *RequestData
+    message string
     request_type string
     pieces []int
 }
-class websocket_repository {
 
+/'usecase'/
+class websocket_repository {
+    MatchRequest(SessionID) Error
+    GameRequest(RequestData) Error
+}
+
+class http_repository{
+    AuthorizeClient(FixedValue) Error, SessionID
 }
 
 interface websocket_i_repository {
-
+    AuthorizeSessionID(SessionID) Error
 }
 
+interface http_i_repository{
+    AuthorizeClient(FixedValue) Error, SessionID
+}
+
+/'controller'/
 class websocket_controller {
     NewWebsocketController() *Webscoket_controller
 }
@@ -79,7 +101,15 @@ interface context {
 
 interface websocket {
 }
-class router {
+
+/'interface'/
+class Gorrila_websocket{
+    GetOpponent()
+}
+
+/'etc'/
+class router{
+    Run()
 }
 
 
