@@ -1,0 +1,13 @@
+@startuml
+loop
+    Client -> API : コマのデータを送信
+    API -> Client : 相手からのデータ送信
+    alt ゲームが正常終了した
+        API -> Client : 正常終了メッセージ通知
+        API -> Client : セッション切断
+    else ゲームが異常終了した
+        API -> Client : 異常終了メッセージ通知
+        API -> Client : セッション切断
+    end
+end
+@enduml

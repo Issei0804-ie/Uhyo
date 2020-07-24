@@ -1,0 +1,67 @@
+@startuml
+participant application
+participant app_server
+
+== http_open ==
+application -> app_server : クライアントの認証(ハードコーディング)
+alt 認証OK
+    app_server -> application : セッションIDを返す
+else 認証NG
+    app_server -> application : エラー処理
+end
+
+== http_close ==
+
+
+== websocket_open ==
+application -> app_server : マッチングリクエスト(セッションID)
+alt 不正なセッションID
+    app_server -> application : エラー処理
+    app_server -x application : セッション切断
+end
+
+... マッチング処理中 ...
+
+alt マッチング完了
+    app_server -> application : マッチング完了通知
+    app_server -x application : セッション切断
+end
+
+== websocket_close ==
+
+== websocket_open ==
+application -> app_server : ゲームリクエスト(セッションID)
+alt 不正なセッションID
+    app_server -> application : エラー処理
+    app_server -x application : セッション切断
+end
+
+alt ルームが存在しない
+    app_server -> application : エラー処理
+    app_server -x application : セッション切断
+end
+
+loop infinity
+application --> app_server : Request
+    alt Get_board_data
+        activate app_server
+        app_server --> application : Response_board_data
+        deactivate app_server
+    else Submit_board_data
+        alt 自分のターン
+        app_server --> application : Response_board_data
+        else
+        app_server --> application : Response_error
+        end
+        deactivate app_server
+    else Request_finish_game
+        alt 一定時間経過外 or アプリ側からセッションを切る
+            app_server --x application : disconnect
+            app_server -> app_server : セッションID, ルームIDの破棄
+        end
+    end
+end
+
+== websocket_close ==
+
+@enduml
