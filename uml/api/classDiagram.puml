@@ -1,0 +1,95 @@
+@startuml
+
+package "Domain"{
+    class SessionID
+    class FixedValue
+    class RequestData
+}
+package "Usecase"{
+    class websocket_repository
+    class http_repository
+    interface websocket_i_repository
+    interface http_i_repository
+}
+
+
+package "controller" {
+    class websocket_controller
+    class http_controller
+    interface context
+    interface websocket
+}
+
+package "Framework" {
+    /'こいつにオンメモリでデータを持たせばよさそう'/
+    class Gorrila_websocket
+    class gin
+}
+
+
+websocket <|. Gorrila_websocket
+SessionID <.. websocket_repository
+websocket_i_repository <|. websocket_controller
+websocket_i_repository <.. websocket_repository
+context <.. websocket_controller
+websocket <.. websocket_controller
+websocket_controller <.. router
+
+http_i_repository <.. http_repository
+http_controller .|> http_i_repository
+http_controller ..> context
+gin .|> context
+
+
+class router{
+}
+class Gorrila_websocket{
+    GetOpponent()
+}
+
+class SessionID {
+    NewSessionID() *SessionID
+    session_id string
+}
+
+class FixedValue {
+    NewFixedValue() *FixedValue
+    fixed_value string
+}
+
+class RequestData {
+    request_data() *RequestData
+    request_type string
+    pieces []int
+}
+class websocket_repository {
+
+}
+
+interface websocket_i_repository {
+
+}
+
+class websocket_controller {
+    NewWebsocketController() *Webscoket_controller
+}
+
+interface context {
+}
+
+interface websocket {
+}
+class router {
+}
+
+
+/'
+    "--":関連
+    "<..":依存
+    "o--":集約(弱い has-a 関係)
+    "*--":コンポジッション(強い has-a 関係)
+    "<|.":実現
+    "<|-":継承
+'/
+@enduml
+
